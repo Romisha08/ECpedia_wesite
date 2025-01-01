@@ -1,0 +1,151 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const subjects = [
+	{
+		name: 'Information Theory & Coding',
+		resources: [
+			{ name: 'Course Notes', url: 'https://drive.google.com/drive/folders/1MXXM5uoo6PMcAAx5Ent7tvwwF95xvfNy?usp=drive_link', icon: '📘' },
+			{ name: 'Previous Year Papers', url: 'https://drive.google.com/drive/folders/11Iqp8Cs-pxgBeZRWtpmceorqSuBEetpG?usp=drive_link', icon: '📝' },
+			{ name: 'Books', url: 'https://drive.google.com/drive/folders/1rqryCno6Rlkbqe4-_Ei4Fv8fZxyUOrrS?usp=drive_link', icon: '📚' },
+			{ name: 'Youtube Links', url: '/pdfs/sem1/math1-papers.pdf', icon: '🎥' }
+		]
+	},
+	{
+		name: 'Soft Skill (Decision Making)',
+		resources: [
+			{ name: 'Course Notes', url: 'https://drive.google.com/drive/folders/1eYGaIhE_95xPmqHajs2_Y4pe3ZZLA0l_?usp=drive_link', icon: '📘' },
+			{ name: 'Previous Year Papers', url: 'https://drive.google.com/drive/folders/11_8OnoG1Z-_324IdLgEZnTqTxTB_zSDM?usp=drive_link', icon: '📝' },
+			{ name: 'Books', url: 'https://drive.google.com/drive/folders/1CNrZ0UZvZo_XoJ8lKtePLQDp5AF2UgeO?usp=drive_link', icon: '📚' },
+			{ name: 'Youtube Links', url: '/pdfs/sem1/math1-papers.pdf', icon: '🎥' }
+		]
+	},
+	{
+		name: 'Digital Signal Processing',
+		resources: [
+			{ name: 'Course Notes', url: 'https://drive.google.com/drive/folders/1ZyC1jDr4FGXddYZIDiScsvYC1kfZoxaT?usp=drive_link', icon: '📘' },
+			{ name: 'Previous Year Papers', url: 'https://drive.google.com/drive/folders/1MmFu9KzP9312svV9cUuEBViLNJ9XPXzr?usp=drive_link', icon: '📝' },
+			{ name: 'Books', url: 'https://drive.google.com/drive/folders/1Cc3czngSK7eYEtATMJVjim-elcTFs6Mc?usp=drive_link', icon: '📚' },
+			{ name: 'Youtube Links', url: '/pdfs/sem1/math1-papers.pdf', icon: '🎥' }
+		]
+	},
+	{
+		name: 'Computer Networks',
+		resources: [
+			{ name: 'Course Notes', url: 'https://drive.google.com/drive/folders/1VIveQ9Ot3nVPLHcEakvGzwj9AOlR7EfV?usp=drive_link', icon: '📘' },
+			{ name: 'Previous Year Papers', url: 'https://drive.google.com/drive/folders/1pD6qwtIBV3zXq-55oGPrAzmoV-Pg6_R6?usp=drive_link', icon: '📝' },
+			{ name: 'Books', url: 'https://drive.google.com/drive/folders/155dgkl_yvp1wjxFgU75NgWk1u4DLvr23?usp=drive_link', icon: '📚' },
+			{ name: 'Youtube Links', url: '/pdfs/sem1/math1-papers.pdf', icon: '🎥' }
+		]
+	},
+	{
+		name: 'RF and Microwave Engineering',
+		resources: [
+			{ name: 'Course Notes', url: 'https://drive.google.com/drive/folders/1Nx9s-wAie1RH-hr2_axn5UVCCVbTxOIk?usp=drive_link', icon: '📘' },
+			{ name: 'Previous Year Papers', url: 'https://drive.google.com/drive/folders/1eJFxfdxNJyi9DigR-I447X6zqiBqymID?usp=drive_link', icon: '📝' },
+			{ name: 'Books', url: 'https://drive.google.com/drive/folders/1GLcptYCZNXSXC7ajfiZ8FzpkkisACnN8?usp=drive_link', icon: '📚' },
+			{ name: 'Youtube Links', url: '/pdfs/sem1/math1-papers.pdf', icon: '🎥' }
+		]
+	},
+	
+];
+---
+
+<Layout title="Semester 6 - BTech ECE">
+	<main>
+		<a href="/" class="back-link">&larr; Back to Home</a>
+		<h1>Semester <span class="text-gradient">Six</span></h1>
+		
+		<div class="subjects-grid">
+			{subjects.map(subject => (
+				<div class="subject-card">
+					<h2>{subject.name}</h2>
+					<ul class="resources-list">
+						{subject.resources.map(resource => (
+							<li>
+								<a href={resource.url} target="_blank" rel="noopener noreferrer">
+									{resource.icon} {resource.name}
+								</a>
+							</li>
+						))}
+					</ul>
+				</div>
+			))}
+		</div>
+	</main>
+</Layout>
+
+<style>
+	main {
+		margin: auto;
+		padding: 2rem;
+		width: 1200px;
+		max-width: calc(100% - 2rem);
+		color: white;
+		font-size: 20px;
+		line-height: 1.6;
+	}
+	.back-link {
+		display: inline-block;
+		color: rgb(var(--accent-light));
+		text-decoration: none;
+		margin-bottom: 2rem;
+		transition: color 0.2s ease-in-out;
+	}
+	.back-link:hover {
+		color: white;
+	}
+	h1 {
+		font-size: 3rem;
+		font-weight: 700;
+		line-height: 1.2;
+		margin-bottom: 2rem;
+	}
+	.text-gradient {
+		background-image: var(--accent-gradient);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-size: 400%;
+		background-position: 0%;
+	}
+	.subjects-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+		gap: 2rem;
+	}
+	.subject-card {
+		background-color: #23262d;
+		border-radius: 8px;
+		padding: 1.5rem;
+	}
+	.subject-card h2 {
+		margin: 0;
+		font-size: 1.5rem;
+		margin-bottom: 1rem;
+		color: rgb(var(--accent-light));
+	}
+	.resources-list {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+	}
+	.resources-list li {
+		margin-bottom: 0.5rem;
+	}
+	.resources-list a {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		color: white;
+		text-decoration: none;
+		padding: 0.5rem;
+		border-radius: 4px;
+		transition: background-color 0.2s ease-in-out;
+	}
+	.resources-list a:hover {
+		background-color: rgba(var(--accent-light), 0.1);
+	}
+	.pdf-icon {
+		margin-left: 0.5rem;
+	}
+</style>

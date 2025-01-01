@@ -1,0 +1,93 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="BTech ECE Course Materials">
+	<main>
+		<h1>BTech <span class="text-gradient">Electronics & Communication</span></h1>
+		<p class="description">
+			Access course materials, notes, and resources for BTech in Electronics & Communication Engineering.
+      	</p>
+<p class ="intro">
+      Welcome to  NIT Jamshedpur—yes, I’m talking to you! If you’re here, I know exactly what you’re going through—late nights, endless assignments, and faculty that’s stricter than your mom's curfew. But hey, don’t worry! You’re not alone, and we’ve all survived it. 
+		</p>
+
+		<div class="semester-grid">
+			{
+				[1, 2, 3, 4, 5, 6, 7, 8].map((sem) => (
+					<a href={`/semester-${sem}`} class="semester-card">
+						<h2>Semester {sem}</h2>
+						<p>Access course materials for semester {sem}</p>
+					</a>
+				))
+			}
+		</div>
+	</main>
+</Layout>
+
+<style>
+	main {
+		margin: auto;
+		padding: 2rem;
+		width: 1200px;
+		max-width: calc(100% - 2rem);
+		color: white;
+		font-size: 20px;
+		line-height: 1.6;
+	}
+	h1 {
+		font-size: 3.5rem;
+		font-weight: 700;
+		line-height: 1.2;
+		text-align: center;
+		margin-bottom: 1em;
+	}
+	.text-gradient {
+		background-image: var(--accent-gradient);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-size: 400%;
+		background-position: 0%;
+	}
+	.description {
+		text-align: center;
+		margin-bottom: 3rem;
+		color: rgb(var(--accent-light));
+	}
+  .intro {
+		text-align: center;
+		margin-bottom: 3rem;
+		color: rgb(var(--accent-light));
+    }
+	.semester-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+		gap: 2rem;
+		padding: 0;
+	}
+	.semester-card {
+		display: block;
+		padding: 1.5rem;
+		background-color: #23262d;
+		border-radius: 8px;
+		text-decoration: none;
+		color: white;
+		transition: transform 0.2s ease-in-out;
+	}
+	.semester-card:hover {
+		transform: translateY(-5px);
+		background-image: var(--accent-gradient);
+		background-size: 400%;
+		background-position: 0%;
+	}
+	.semester-card h2 {
+		margin: 0;
+		font-size: 1.5rem;
+		margin-bottom: 0.5rem;
+	}
+	.semester-card p {
+		margin: 0;
+		font-size: 0.9rem;
+		color: rgb(var(--accent-light));
+	}
+</style>

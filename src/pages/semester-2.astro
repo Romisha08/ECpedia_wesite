@@ -1,0 +1,159 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const subjects = [
+	{
+		name: 'Engineering Mathematics-II',
+		resources: [
+			{ name: 'Course Notes', url: 'https://drive.google.com/drive/folders/1xRxQSmwZ-H6Cb9OchNNeP3aUdOdnTvKZ?usp=drive_link', icon: '📚' },
+			{ name: 'Previous Year Papers', url: 'https://drive.google.com/drive/folders/1c1fv75YJHfqH2kPVgC9lR0ZIuy8wMfRN?usp=drive_link', icon: '📄' },
+			{ name: 'Books', url: 'https://drive.google.com/drive/folders/1qOimRPXfltZs1z59AKbcVzPoAzAy1hqw?usp=drive_link', icon: '📖' },
+			{ name: 'Youtube Links', url: '/pdfs/sem1/math1-papers.pdf', icon: '🎥' }
+		]
+	},
+	{
+		name: 'Engineering Physics',
+		resources: [
+			{ name: 'Course Notes', url: 'https://drive.google.com/drive/folders/1zS59wKw-AnIpHHNoxDcexCQf9wje9FhE?usp=drive_link', icon: '📚' },
+			{ name: 'Previous Year Papers', url: 'https://drive.google.com/drive/folders/1SU8oggCUxTZ2i0ukJ4CLq61_iNbrdHZA?usp=drive_link', icon: '📄' },
+			{ name: 'Books', url: 'https://drive.google.com/drive/folders/1nTZy738ATZ0l4IYKh0kYnqNtbzeKk0OJ?usp=drive_link', icon: '📖' },
+			{ name: 'Youtube Links', url: '/pdfs/sem1/math1-papers.pdf', icon: '🎥' }
+		]
+	},
+	{
+		name: 'Basic Electronics',
+		resources: [
+			{ name: 'Course Notes', url: 'https://drive.google.com/drive/folders/1wP-D9OuwqnMMnq9uu5T7XLXJwxhnY-Kj?usp=drive_link', icon: '📚' },
+			{ name: 'Previous Year Papers', url: 'https://drive.google.com/drive/folders/1VbylXSJBQ1z65Sf_L0T6zxxYPchnO-YU?usp=drive_link', icon: '📄' },
+			{ name: 'Books', url: 'https://drive.google.com/drive/folders/1rhayImxTYKE2JUW3BGSZvWDw1sHIs7uj?usp=drive_link', icon: '📖' },
+			{ name: 'Youtube Links', url: '/pdfs/sem1/math1-papers.pdf', icon: '🎥' }
+		]
+	},
+	{
+		name: 'Engineering Mechanics',
+		resources: [
+			{ name: 'Course Notes', url: 'https://drive.google.com/drive/folders/1B8s-h1WpEWFsAs1Lavymtb3NTMjS_VIf?usp=drive_link', icon: '📚' },
+			{ name: 'Previous Year Papers', url: 'https://drive.google.com/drive/folders/1w3NnNKxRxbZ4-s5DTEIEjysVnMPUlOjk?usp=drive_link', icon: '📄' },
+			{ name: 'Books', url: 'https://drive.google.com/drive/folders/15Y5pMU9g_4X_POW-ouwd4rz3FWkqWFGI?usp=drive_link', icon: '📖' },
+			{ name: 'Youtube Links', url: '/pdfs/sem1/math1-papers.pdf', icon: '🎥' }
+		]
+	},
+	{
+		name: 'English',
+		resources: [
+			{ name: 'Course Notes', url: 'https://drive.google.com/drive/folders/17FdTkVgL_mXqNR789CurYoWQcueKmi4i?usp=drive_link', icon: '📚' },
+			{ name: 'Previous Year Papers', url: 'https://drive.google.com/drive/folders/1lgdzujKiYjq2-F-0-3wuTu8aQLmbcm42?usp=drive_link', icon: '📄' },
+			{ name: 'Books', url: 'https://drive.google.com/drive/folders/1XOc0tuTBuSE4S96VHLeaUiLQ0jCe4fGt?usp=drive_link', icon: '📖' },
+			{ name: 'Youtube Links', url: '/pdfs/sem1/math1-papers.pdf', icon: '🎥' }
+		]
+	},
+	{
+		name: 'Biology',
+		resources: [
+			{ name: 'Course Notes', url: 'https://drive.google.com/drive/folders/1Ze3gJ-NV_OC9Jbz82YCYBLc-pUwPL7yZ?usp=drive_link', icon: '📚' },
+			{ name: 'Previous Year Papers', url: 'https://drive.google.com/drive/folders/1Ne29A1JpE1SjzhzYg_92YV6dwi3gN1Jf?usp=drive_link', icon: '📄' },
+			{ name: 'Books', url: 'https://drive.google.com/drive/folders/1o3TkV3BbQjlsavo8ayzO2T5cQW_FHSLj?usp=drive_link', icon: '📖' },
+			{ name: 'Youtube Links', url: '/pdfs/sem1/math1-papers.pdf', icon: '🎥' }
+		]
+	}
+];
+---
+
+<Layout title="Semester 2 - BTech ECE">
+	<main>
+		<a href="/" class="back-link">&larr; Back to Home</a>
+		<h1>Semester <span class="text-gradient">Two</span></h1>
+		
+		<div class="subjects-grid">
+			{subjects.map(subject => (
+				<div class="subject-card">
+					<h2>{subject.name}</h2>
+					<ul class="resources-list">
+						{subject.resources.map(resource => (
+							<li>
+								<a href={resource.url} target="_blank" rel="noopener noreferrer">
+									{resource.icon} {resource.name}
+								</a>
+							</li>
+						))}
+					</ul>
+				</div>
+			))}
+		</div>
+	</main>
+</Layout>
+
+<style>
+	main {
+		margin: auto;
+		padding: 2rem;
+		width: 1200px;
+		max-width: calc(100% - 2rem);
+		color: white;
+		font-size: 20px;
+		line-height: 1.6;
+	}
+	.back-link {
+		display: inline-block;
+		color: rgb(var(--accent-light));
+		text-decoration: none;
+		margin-bottom: 2rem;
+		transition: color 0.2s ease-in-out;
+	}
+	.back-link:hover {
+		color: white;
+	}
+	h1 {
+		font-size: 3rem;
+		font-weight: 700;
+		line-height: 1.2;
+		margin-bottom: 2rem;
+	}
+	.text-gradient {
+		background-image: var(--accent-gradient);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-size: 400%;
+		background-position: 0%;
+	}
+	.subjects-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+		gap: 2rem;
+	}
+	.subject-card {
+		background-color: #23262d;
+		border-radius: 8px;
+		padding: 1.5rem;
+	}
+	.subject-card h2 {
+		margin: 0;
+		font-size: 1.5rem;
+		margin-bottom: 1rem;
+		color: rgb(var(--accent-light));
+	}
+	.resources-list {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+	}
+	.resources-list li {
+		margin-bottom: 0.5rem;
+	}
+	.resources-list a {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		color: white;
+		text-decoration: none;
+		padding: 0.5rem;
+		border-radius: 4px;
+		transition: background-color 0.2s ease-in-out;
+	}
+	.resources-list a:hover {
+		background-color: rgba(var(--accent-light), 0.1);
+	}
+	.pdf-icon {
+		margin-left: 0.5rem;
+	}
+</style>

@@ -1,0 +1,156 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const subjects = [
+	{
+		name: 'Digital Communication',
+		resources: [
+			{ name: 'Course Notes', url: 'https://drive.google.com/drive/folders/1vxIxRkFuYuq9xz6fhB8Zq3jXUICh1AuD?usp=drive_link', icon: '📚' },
+			{ name: 'Previous Year Papers', url: 'https://drive.google.com/drive/folders/1vjhMt-baQ5w-xWpdVlquQeJjhqzCgXlW?usp=drive_link', icon: '📄' },
+			{ name: 'Books', url: 'https://drive.google.com/drive/folders/1PKQOWpFxuzJdKlhFqcAY0zfiUgWi7F_f?usp=drive_link', icon: '📖' },
+			{ name: 'Youtube Links', url: 'https://youtu.be/OyWdYkx0PmI?si=rOl1fiX5i20NY4na', icon: '🎥' }
+		]
+	},
+	{
+		name: 'Antenna and Wave Propagation',
+		resources: [
+			{ name: 'Course Notes', url: 'https://drive.google.com/drive/folders/1N-te8NRPd58lyiVuS0Nml7yr6iBkJxQB?usp=drive_link', icon: '📚' },
+			{ name: 'Previous Year Papers', url: 'https://drive.google.com/drive/folders/1A23vJTf1NMi7LhUvvgoV3QH6fHhwTNcE?usp=drive_link', icon: '📄' },
+			{ name: 'Books', url: 'https://drive.google.com/drive/folders/1jj56hdiedi0gXGAfFjSdUyxxDpYnk2Lw?usp=drive_link', icon: '📖' },
+			{ name: 'Youtube Links', url: 'https://youtu.be/FdKdn7LOdGI?si=BP6I1dfcA_LHbsaT', icon: '🎥' }
+		]
+	},
+	{
+		name: 'VLSI Design',
+		resources: [
+			{ name: 'Course Notes', url: 'https://drive.google.com/drive/folders/1Aez76HoNHyewGOtHvhnDqf8YSXbqYIlV?usp=drive_link', icon: '📚' },
+			{ name: 'Previous Year Papers', url: 'https://drive.google.com/drive/folders/1s72JPda7BFyYHQcFRewevygRje5gB6Bg?usp=drive_link', icon: '📄' },
+			{ name: 'Books', url: 'https://drive.google.com/drive/folders/1KavtVkKZJ0xGhxswAWtITfOY_8LdieEy?usp=drive_link', icon: '📖' },
+			{ name: 'Youtube Links', url: 'https://youtu.be/MaYkHMTpNg8?si=xE-ZjGIp2migNr1B', icon: '🎥' }
+		]
+	},
+	{
+		name: 'IOT and Embedded System',
+		resources: [
+			{ name: 'Course Notes', url: 'https://drive.google.com/drive/folders/12WxBixYMSkBgMHliSQCuKdl2R2EEGjhx?usp=drive_link', icon: '📚' },
+			{ name: 'Previous Year Papers', url: 'https://drive.google.com/drive/folders/1Wd5xNvysoRxp1Ct-t5M2-gRCemFVB46x?usp=drive_link', icon: '📄' },
+			{ name: 'Books', url: 'https://drive.google.com/drive/folders/19RXFq462UksYF2PbsyTnOpODu1jCvFbT?usp=drive_link', icon: '📖' },
+			{ name: 'Youtube Links', url: 'https://youtu.be/b-fCl-UDJuo?si=prtUTsvUZAI_Qb2J', icon: '🎥' }
+		]
+	},
+	{
+		name: 'Control System',
+		resources: [
+			{ name: 'Course Notes', url: 'https://drive.google.com/drive/folders/1Jj1C1eQK_UXcc40_X0WNne8UNovxRifX?usp=drive_link', icon: '📚' },
+			{ name: 'Previous Year Papers', url: 'https://drive.google.com/drive/folders/15vkXrDfiW-zBGbZu9w6MSgQVu_6TfUQw?usp=drive_link', icon: '📄' },
+			{ name: 'Books', url: 'https://drive.google.com/drive/folders/1-fK0BG1Wie2IOmJi5Xp2tddFopY6TATJ?usp=drive_link', icon: '📖' },
+			{ name: 'Youtube Links', url: 'https://youtu.be/39Ggoj2fQ2c?si=t6dHuf9nvhAib8aa', icon: '🎥' }
+		]
+	},
+	{
+		name: 'IPR',
+		resources: [
+			{ name: 'Course Notes', url: 'https://drive.google.com/drive/folders/1gcathPgOxAkyLoK6o26b7C6931TzAPRr?usp=drive_link', icon: '📚' },
+			{ name: 'Previous Year Papers', url: 'https://drive.google.com/drive/folders/1sgYeFQW0iaNQz9JxQrKdL3r6yBEC6rTE?usp=drive_link', icon: '📄' },
+			{ name: 'Books', url: 'https://drive.google.com/drive/folders/1ps_SJwNu15FVVRiMLHQpMbIb21E2qVvT?usp=drive_link', icon: '📖' },
+			{ name: 'Youtube Links', url: '/pdfs/sem1/math1-papers.pdf', icon: '🎥' }
+		]
+	}
+];
+---
+
+<Layout title="Semester 2 - BTech ECE">
+	<main>
+		<a href="/" class="back-link">&larr; Back to Home</a>
+		<h1>Semester <span class="text-gradient">Five</span></h1>
+		
+		<div class="subjects-grid">
+			{subjects.map(subject => (
+				<div class="subject-card">
+					<h2>{subject.name}</h2>
+					<ul class="resources-list">
+						{subject.resources.map(resource => (
+							<li>
+								<a href={resource.url} target="_blank" rel="noopener noreferrer">
+									{resource.icon} {resource.name}
+								</a>
+							</li>
+						))}
+					</ul>
+				</div>
+			))}
+		</div>
+	</main>
+</Layout>
+
+<style>
+	main {
+		margin: auto;
+		padding: 2rem;
+		width: 1200px;
+		max-width: calc(100% - 2rem);
+		color: white;
+		font-size: 20px;
+		line-height: 1.6;
+	}
+	.back-link {
+		display: inline-block;
+		color: rgb(var(--accent-light));
+		text-decoration: none;
+		margin-bottom: 2rem;
+		transition: color 0.2s ease-in-out;
+	}
+	.back-link:hover {
+		color: white;
+	}
+	h1 {
+		font-size: 3rem;
+		font-weight: 700;
+		line-height: 1.2;
+		margin-bottom: 2rem;
+	}
+	.text-gradient {
+		background-image: var(--accent-gradient);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-size: 400%;
+		background-position: 0%;
+	}
+	.subjects-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+		gap: 2rem;
+	}
+	.subject-card {
+		background-color: #23262d;
+		border-radius: 8px;
+		padding: 1.5rem;
+	}
+	.subject-card h2 {
+		margin: 0;
+		font-size: 1.5rem;
+		margin-bottom: 1rem;
+		color: rgb(var(--accent-light));
+	}
+	.resources-list {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+	}
+	.resources-list li {
+		margin-bottom: 0.5rem;
+	}
+	.resources-list a {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		color: white;
+		text-decoration: none;
+		padding: 0.5rem;
+		border-radius: 4px;
+		transition: background-color 0.2s ease-in-out;
+	}
+	.resources-list a:hover {
+		background-color: rgba(var(--accent-light), 0.1);
+	}
+</style>

@@ -1,0 +1,151 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const subjects = [
+	{
+		name: 'Analog Communication',
+		resources: [
+			{ name: 'Course Notes', url: 'https://drive.google.com/drive/folders/1CU5fv24vA246ZuYk4cPG8XHtFbWDvrow?usp=drive_link', icon: '📘' },
+			{ name: 'Previous Year Papers', url: 'https://drive.google.com/drive/folders/1CZtU314vXYgF9Oek7Hj_BR0CFm8Rwjcy?usp=drive_link', icon: '📝' },
+			{ name: 'Books', url: 'https://drive.google.com/drive/folders/1yXkyBN9k6OjQNd_foFO8MOoyoegGMU3P?usp=drive_link', icon: '📚' },
+			{ name: 'Youtube Links', url: 'https://youtube.com/playlist?list=PLPeKeikHHWGfaHVBYrqxRk2Wl8uYSjRWM&si=ijyREyPpJWq-JOhy', icon: '🎥' }
+		]
+	},
+	{
+		name: 'Analog Electronics',
+		resources: [
+			{ name: 'Course Notes', url: 'https://drive.google.com/drive/folders/1HKtL6PN7MmTbgbWTBudAZcCzqu4GL45h?usp=drive_link', icon: '📘' },
+			{ name: 'Previous Year Papers', url: 'https://drive.google.com/drive/folders/1MEztFijlrV7FQtCWnzmbNJiM_CKR_kNU?usp=drive_link', icon: '📝' },
+			{ name: 'Books', url: 'https://drive.google.com/drive/folders/1G0V___GOzZbsClGA2YG9PfFmCWJ4Vf6V?usp=drive_link', icon: '📚' },
+			{ name: 'Youtube Links', url: 'https://youtube.com/playlist?list=PLBlnK6fEyqRiw-GZRqfnlVIBz9dxrqHJS&si=XQFywO6k2PKRPPgw', icon: '🎥' }
+		]
+	},
+	{
+		name: 'Electromagnetic field theory',
+		resources: [
+			{ name: 'Course Notes', url: 'https://drive.google.com/drive/folders/1WLAv6KCS2GwdjhmxNdFNPx0S6Z4hVkXr?usp=drive_link', icon: '📘' },
+			{ name: 'Previous Year Papers', url: 'https://drive.google.com/drive/folders/1VdtWmuyRRcu_vv_pq5xMctDnX7-tsL_A?usp=drive_link', icon: '📝' },
+			{ name: 'Books', url: 'https://drive.google.com/drive/folders/1jeGWNJTh2QflDI2XGkqkx3kuUfEksYT-?usp=drive_link', icon: '📚' },
+			{ name: 'Youtube Links', url: 'https://youtube.com/playlist?list=PLgwJf8NK-2e4I_YltJja47CwZJkzNWK89&si=bpJ7z7MNcadxfi0k', icon: '🎥' }
+		]
+	},
+	{
+		name: 'Microprocessor & Microcontroller',
+		resources: [
+			{ name: 'Course Notes', url: 'https://drive.google.com/drive/folders/1CNo1sNlQRealjArKQi_7zbgo61dFYh49?usp=drive_link', icon: '📘' },
+			{ name: 'Previous Year Papers', url: 'https://drive.google.com/drive/folders/1am7vgwVJXI7CyRvEIV8KsDXWROm34fBo?usp=drive_link', icon: '📝' },
+			{ name: 'Books', url: 'https://drive.google.com/drive/folders/1osOFF2ziUKXzt5yCrmcA1-qODjik3yuS?usp=drive_link', icon: '📚' },
+			{ name: 'Youtube Links', url: 'https://youtube.com/playlist?list=PLndX8heiWwErijxt7FpnRilO2KV4UhFmN&si=xGBjveF_fcpHH-Nu', icon: '🎥' }
+		]
+	},
+	{
+		name: 'Soft computing',
+		resources: [
+			{ name: 'Course Notes', url: 'https://drive.google.com/drive/folders/1CpGp5mqyIBSNO5pe1z1iI7EX1Lw3WHus?usp=drive_link', icon: '📘' },
+			{ name: 'Previous Year Papers', url: 'https://drive.google.com/drive/folders/1_ky1cRX-YvxP3Cs38cgd2IGAhMWTmDSh?usp=drive_link', icon: '📝' },
+			{ name: 'Books', url: 'https://drive.google.com/drive/folders/16umr2kvGmMoR3zn3TiYLAxYrOw3cJdB4?usp=drive_link', icon: '📚' },
+			{ name: 'Youtube Links', url: 'https://youtube.com/playlist?list=PL4gu8xQu0_5JK6KmQi-Qx5hI3W13RJbDY&si=rfW0zOlfVHbRbUcE', icon: '🎥' }
+		]
+	},
+	
+];
+---
+
+<Layout title="Semester 4 - BTech ECE">
+	<main>
+		<a href="/" class="back-link">&larr; Back to Home</a>
+		<h1>Semester <span class="text-gradient">Four</span></h1>
+		
+		<div class="subjects-grid">
+			{subjects.map(subject => (
+				<div class="subject-card">
+					<h2>{subject.name}</h2>
+					<ul class="resources-list">
+						{subject.resources.map(resource => (
+							<li>
+								<a href={resource.url} target="_blank" rel="noopener noreferrer">
+									{resource.icon} {resource.name}
+								</a>
+							</li>
+						))}
+					</ul>
+				</div>
+			))}
+		</div>
+	</main>
+</Layout>
+
+<style>
+	main {
+		margin: auto;
+		padding: 2rem;
+		width: 1200px;
+		max-width: calc(100% - 2rem);
+		color: white;
+		font-size: 20px;
+		line-height: 1.6;
+	}
+	.back-link {
+		display: inline-block;
+		color: rgb(var(--accent-light));
+		text-decoration: none;
+		margin-bottom: 2rem;
+		transition: color 0.2s ease-in-out;
+	}
+	.back-link:hover {
+		color: white;
+	}
+	h1 {
+		font-size: 3rem;
+		font-weight: 700;
+		line-height: 1.2;
+		margin-bottom: 2rem;
+	}
+	.text-gradient {
+		background-image: var(--accent-gradient);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-size: 400%;
+		background-position: 0%;
+	}
+	.subjects-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+		gap: 2rem;
+	}
+	.subject-card {
+		background-color: #23262d;
+		border-radius: 8px;
+		padding: 1.5rem;
+	}
+	.subject-card h2 {
+		margin: 0;
+		font-size: 1.5rem;
+		margin-bottom: 1rem;
+		color: rgb(var(--accent-light));
+	}
+	.resources-list {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+	}
+	.resources-list li {
+		margin-bottom: 0.5rem;
+	}
+	.resources-list a {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		color: white;
+		text-decoration: none;
+		padding: 0.5rem;
+		border-radius: 4px;
+		transition: background-color 0.2s ease-in-out;
+	}
+	.resources-list a:hover {
+		background-color: rgba(var(--accent-light), 0.1);
+	}
+	.pdf-icon {
+		margin-left: 0.5rem;
+	}
+</style>

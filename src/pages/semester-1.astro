@@ -1,0 +1,165 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const subjects = [
+	{
+		name: 'Engineering Mathematics I',
+		resources: [
+			{ name: 'Course Notes', url: 'https://drive.google.com/drive/folders/1M7dxv0Q34iT8V7FsHYoovnlZm2bMZtdH?usp=drive_link', icon: '📚' },
+			{ name: 'Previous Year Papers', url: 'https://drive.google.com/drive/folders/1lgDPwGG7YVTxPbUjZnLrIDZvQU5ns_Tf?usp=drive_link', icon: '📄' },
+			{ name: 'Books', url: 'https://drive.google.com/drive/folders/1uzzaB1c4l4mIkq3s-ycpPrn1vOTdgklB?usp=drive_link', icon: '📖' },
+			{ name: 'Youtube Links', url: 'https://youtu.be/example', icon: '🎥' }
+		]
+	},
+	{
+		name: 'Introduction to DSA',
+		resources: [
+			{ name: 'Course Notes', url: 'https://drive.google.com/drive/folders/1LWNo8QFtJU25KfGGT_m7XPlG9pR4OK9Y?usp=drive_link', icon: '📚' },
+			{ name: 'Previous Year Papers', url: 'https://drive.google.com/drive/folders/1S49a9wgc4TmCNjTFxbMKzDrKAMzL4BFv?usp=drive_link', icon: '📄' },
+			{ name: 'Books', url: 'https://drive.google.com/drive/folders/1wNXHCW9b44Z3nexk7vr1jSUxcLGmA3vW?usp=drive_link', icon: '📖' },
+			{ name: 'Youtube Links', url: 'https://youtu.be/example2', icon: '🎥' }
+		]
+	},
+	{
+		name: 'Material Science',
+		resources: [
+			{ name: 'Course Notes',url: 'https://drive.google.com/drive/folders/1lKrt8h1w6y2tJ9EjdzmpI9XvZIy5bzGr?usp=drive_link', icon: '📚' },
+			{ name: 'Previous Year Papers', url: 'https://drive.google.com/drive/folders/1NITM36ofR2Uk9snqh-x_w-_TyW1eoDLX?usp=drive_link', icon: '📄' },
+			{ name: 'Books', url: 'https://drive.google.com/drive/folders/12h-OEgsE2pdzNiXINESP-2Fj4jzU11bI?usp=drive_link', icon: '📖' },
+			{ name: 'Youtube Links', url: 'https://youtu.be/example3', icon: '🎥' }
+		]
+	},
+	{
+		name: 'Environmental Science',
+		resources: [
+			{ name: 'Course Notes', url: 'https://drive.google.com/drive/folders/1WbYOGuAYeJfIH8aR100Ch88RsnXHoNgB?usp=drive_link', icon: '📚' },
+			{ name: 'Previous Year Papers', url: 'https://drive.google.com/drive/folders/1jhmCVMDoxX_Fcv7ceT_78Gt_7P-oZcwl?usp=drive_link', icon: '📄' },
+			{ name: 'Books', url: 'https://drive.google.com/drive/folders/1Dma74AdVN1-eQYFYWTSP9BUmZ2rFa91f?usp=drive_link', icon: '📖' },
+			{ name: 'Youtube Links', url: 'https://youtu.be/example4', icon: '🎥' }
+		]
+	},
+	{
+		name: 'Engineering Drawing(ED)',
+		resources: [
+			{ name: 'Course Notes', url: 'https://drive.google.com/drive/folders/19VjloBif6uic3HPXn5xX8FluV3kIpzJV?usp=drive_link', icon: '📚' },
+			{ name: 'Previous Year Papers', url: 'https://drive.google.com/drive/folders/1otpIW1toSyjcwhSjV4pTvjewkDCnLMsv?usp=drive_link', icon: '📄' },
+			{ name: 'Books', url: 'https://drive.google.com/drive/folders/1LmpP6pamIPNzSaQQNdAiyuxStFKXKKvA?usp=drive_link', icon: '📖' },
+			{ name: 'Youtube Links', url: 'https://youtu.be/example5', icon: '🎥' }
+		]
+	},
+	{
+		name: 'Engineering Chemistry',
+		resources: [
+			{ name: 'Course Notes', url: 'https://drive.google.com/drive/folders/1Bqv_Q_oxirtLE5AdObHLU97woqhdvY9e?usp=drive_link', icon: '📚' },
+			{ name: 'Previous Year Papers', url: 'https://drive.google.com/drive/folders/1RtiNa4_V-fmv08KF17bsyZfktuocloy2?usp=drive_link', icon: '📄' },
+			{ name: 'Books', url: 'https://drive.google.com/drive/folders/1er893j6_IKd4IfqqFZ8Wf1oBlGS2n4e8?usp=drive_link', icon: '📖' },
+			{ name: 'Youtube Links', url: 'https://youtu.be/example6', icon: '🎥' }
+		]
+	}
+];
+---
+
+<Layout title="Semester 1 - BTech ECE">
+	<main>
+		<a href="/" class="back-link">&larr; Back to Home</a>
+		<h1>Semester <span class="text-gradient">One</span></h1>
+		
+		<div class="subjects-grid">
+			{subjects.map(subject => (
+				<div class="subject-card">
+					<h2>{subject.name}</h2>
+					<ul class="resources-list">
+						{subject.resources.map(resource => (
+							<li>
+								{resource.filePath ? (
+									<a href={resource.filePath} target="_blank" rel="noopener noreferrer">
+										{resource.icon} {resource.name}
+									</a>
+								) : (
+									<a href={resource.url} target="_blank" rel="noopener noreferrer">
+										{resource.icon} {resource.name}
+									</a>
+								)}
+							</li>
+						))}
+					</ul>
+				</div>
+			))}
+		</div>
+	</main>
+</Layout>
+
+<style>
+	main {
+		margin: auto;
+		padding: 2rem;
+		width: 1200px;
+		max-width: calc(100% - 2rem);
+		color: white;
+		font-size: 20px;
+		line-height: 1.6;
+	}
+	.back-link {
+		display: inline-block;
+		color: rgb(var(--accent-light));
+		text-decoration: none;
+		margin-bottom: 2rem;
+		transition: color 0.2s ease-in-out;
+	}
+	.back-link:hover {
+		color: white;
+	}
+	h1 {
+		font-size: 3rem;
+		font-weight: 700;
+		line-height: 1.2;
+		margin-bottom: 2rem;
+	}
+	.text-gradient {
+		background-image: var(--accent-gradient);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-size: 400%;
+		background-position: 0%;
+	}
+	.subjects-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+		gap: 2rem;
+	}
+	.subject-card {
+		background-color: #23262d;
+		border-radius: 8px;
+		padding: 1.5rem;
+	}
+	.subject-card h2 {
+		margin: 0;
+		font-size: 1.5rem;
+		margin-bottom: 1rem;
+		color: rgb(var(--accent-light));
+	}
+	.resources-list {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+	}
+	.resources-list li {
+		margin-bottom: 0.5rem;
+	}
+	.resources-list a {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		color: white;
+		text-decoration: none;
+		padding: 0.5rem;
+		border-radius: 4px;
+		transition: background-color 0.2s ease-in-out;
+	}
+	.resources-list a:hover {
+		background-color: rgba(var(--accent-light), 0.1);
+	}
+	.pdf-icon {
+		margin-left: 0.5rem;
+	}
+</style>

@@ -1,0 +1,159 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const subjects = [
+	{
+		name: 'Data Structure & Algorithm',
+		resources: [
+			{ name: 'Course Notes', url: 'https://drive.google.com/drive/folders/1sMPJXAJA5QafxLFVtgfrPE20bfJ2QLlh?usp=drive_link', icon: '📘' },
+			{ name: 'Previous Year Papers', url: 'https://drive.google.com/drive/folders/15GNy1BiNTiQDYgVajL7HS0Ki86uk7Iwk?usp=drive_link', icon: '📄' },
+			{ name: 'Books', url: 'https://drive.google.com/drive/folders/1a0P2TLOjQLXbrMD4EwNPwo-MLyra_ykc?usp=drive_link', icon: '📚' },
+			{ name: 'Youtube Links', url: 'https://youtube.com/playlist?list=PLfqMhTWNBTe137I_EPQd34TsgV6IO55pt&si=DTMD23mMI5E5OUby', icon: '🎥' }
+		]
+	},
+	{
+		name: 'Signal and System',
+		resources: [
+			{ name: 'Course Notes', url: 'https://drive.google.com/drive/folders/1QGQVfD8hSNwTDjE8KIJFPnokkzgfcq86?usp=drive_link', icon: '📘' },
+			{ name: 'Previous Year Papers', url: 'https://drive.google.com/drive/folders/11sbuJI92tjoOAYP2VP4UqMwDX39ZOkXV?usp=drive_link', icon: '📄' },
+			{ name: 'Books', url: 'https://drive.google.com/drive/folders/17KcKzVah0GAd34C7kSWHI_6XIcUFQ5M_?usp=drive_link', icon: '📚' },
+			{ name: 'Youtube Links', url: 'https://youtube.com/playlist?list=PLq-Gm0yRYwTjwxaqapPsSAHzs4_nkQLVr&si=QbSeiVb4B_9kCPIt', icon: '🎥' }
+		]
+	},
+	{
+		name: 'Probability And Stochastic Process',
+		resources: [
+			{ name: 'Course Notes', url: 'https://drive.google.com/drive/folders/1UTyN03xobqxDzGp1r3ehHc7NBfhNZ02A?usp=drive_link', icon: '📘' },
+			{ name: 'Previous Year Papers', url: 'https://drive.google.com/drive/folders/1RqBI8pIkSOftP1rRBV5e1z1xVtD-h8qj?usp=drive_link', icon: '📄' },
+			{ name: 'Books', url: 'https://drive.google.com/drive/folders/19FIDFEhO7psnVPd5gLGXFycC4mq_xBq3?usp=drive_link', icon: '📚' },
+			{ name: 'Youtube Links', url: 'https://youtube.com/playlist?list=PLp6ek2hDcoNBtK-hVSSPlbBzfxXwWON4x&si=WpWQvfhvIZhlWkeU', icon: '🎥' }
+		]
+	},
+	{
+		name: 'Digital circuits & system design',
+		resources: [
+			{ name: 'Course Notes', url: 'https://drive.google.com/drive/folders/1siOoR5iTHmpvKMLmFprvplOwjUK5OSt5?usp=drive_link', icon: '📘' },
+			{ name: 'Previous Year Papers', url: 'https://drive.google.com/drive/folders/1-mXDyli3ab9W-Y4h9Iq1bHaGeW1PEkXv?usp=drive_link', icon: '📄' },
+			{ name: 'Books', url: 'https://drive.google.com/drive/folders/10BGuG04Hx5werb1esU4DEGAemfVqQPYi?usp=drive_link', icon: '📚' },
+			{ name: 'Youtube Links', url: 'https://youtube.com/playlist?list=PLbRMhDVUMngePP5JcezxImF-FzOC9wstz&si=lgZKL1g4A0bH6ey-', icon: '🎥' }
+		]
+	},
+	{
+		name: 'Solid State devices',
+		resources: [
+			{ name: 'Course Notes', url: 'https://drive.google.com/drive/folders/1a2o1NqtLc_X2JFOG3W5oj9qYFDBHcbr8?usp=drive_link', icon: '📘' },
+			{ name: 'Previous Year Papers', url: 'https://drive.google.com/drive/folders/1A65PLc2psyNSu8HqiVS0Im743WMiJndK?usp=drive_link', icon: '📄' },
+			{ name: 'Books', url: 'https://drive.google.com/drive/folders/1h8FLQpfTWDeu6GDaSUamFBxfFnRkYgbi?usp=drive_link', icon: '📚' },
+			{ name: 'Youtube Links', url: '/pdfs/sem1/math1-papers.pdf', icon: '🎥' }
+		]
+	},
+	{
+		name: 'Network theory & System',
+		resources: [
+			{ name: 'Course Notes', url: 'https://drive.google.com/drive/folders/1eWK0Bz1gFzFsJGYrSb3Vt_WNnYBLSiey?usp=drive_link', icon: '📘' },
+			{ name: 'Previous Year Papers', url: 'https://drive.google.com/drive/folders/18sYUhFmoKQARmFQ1jHUB0ppz22J7d464?usp=drive_link', icon: '📄' },
+			{ name: 'Books', url: 'https://drive.google.com/drive/folders/1j68pqc05xOM7pEquf9ldxsLDz5El_ENF?usp=drive_link', icon: '📚' },
+			{ name: 'Youtube Links', url: 'https://youtube.com/playlist?list=PLBlnK6fEyqRgLR-hMp7wem-bdVN1iEhsh&si=ziiOZ1V4CMOp91r8', icon: '🎥' }
+		]
+	}
+];
+---
+
+<Layout title="Semester 3- BTech ECE">
+	<main>
+		<a href="/" class="back-link">&larr; Back to Home</a>
+		<h1>Semester <span class="text-gradient">Three</span></h1>
+		
+		<div class="subjects-grid">
+			{subjects.map(subject => (
+				<div class="subject-card">
+					<h2>{subject.name}</h2>
+					<ul class="resources-list">
+						{subject.resources.map(resource => (
+							<li>
+								<a href={resource.url} target="_blank" rel="noopener noreferrer">
+									{resource.icon} {resource.name}
+								</a>
+							</li>
+						))}
+					</ul>
+				</div>
+			))}
+		</div>
+	</main>
+</Layout>
+
+<style>
+	main {
+		margin: auto;
+		padding: 2rem;
+		width: 1200px;
+		max-width: calc(100% - 2rem);
+		color: white;
+		font-size: 20px;
+		line-height: 1.6;
+	}
+	.back-link {
+		display: inline-block;
+		color: rgb(var(--accent-light));
+		text-decoration: none;
+		margin-bottom: 2rem;
+		transition: color 0.2s ease-in-out;
+	}
+	.back-link:hover {
+		color: white;
+	}
+	h1 {
+		font-size: 3rem;
+		font-weight: 700;
+		line-height: 1.2;
+		margin-bottom: 2rem;
+	}
+	.text-gradient {
+		background-image: var(--accent-gradient);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-size: 400%;
+		background-position: 0%;
+	}
+	.subjects-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+		gap: 2rem;
+	}
+	.subject-card {
+		background-color: #23262d;
+		border-radius: 8px;
+		padding: 1.5rem;
+	}
+	.subject-card h2 {
+		margin: 0;
+		font-size: 1.5rem;
+		margin-bottom: 1rem;
+		color: rgb(var(--accent-light));
+	}
+	.resources-list {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+	}
+	.resources-list li {
+		margin-bottom: 0.5rem;
+	}
+	.resources-list a {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		color: white;
+		text-decoration: none;
+		padding: 0.5rem;
+		border-radius: 4px;
+		transition: background-color 0.2s ease-in-out;
+	}
+	.resources-list a:hover {
+		background-color: rgba(var(--accent-light), 0.1);
+	}
+	.pdf-icon {
+		margin-left: 0.5rem;
+	}
+</style>
