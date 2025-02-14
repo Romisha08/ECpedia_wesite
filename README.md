@@ -3,9 +3,23 @@
   All rights reserved.
   */
 About Me
-Hey, my name is Romisha! currently a third year student in NIT Jamshedhpur in electronics and communication engineering. 
 
-I'm deeply passionate about learning new skills and diving into the ever-evolving world of technology. Whether it's exploring innovative tools, experimenting with cutting-edge frameworks, or building projects that solve real-world problems, I thrive on staying curious and expanding my knowledge base.  
+Hey there! I'm Romisha Biswas, a third-year Electronics and Communication Engineering student at NIT Jamshedpur. I'm passionate about exploring new technologies, building impactful projects, and constantly learning to expand my skill set. From working with modern web frameworks to diving into problem-solving, I enjoy tackling challenges head-on.
 
-Skills
-Javascript · Typescript · React · Next.js · Node.js · Firebase · Astro · TailwindCSS ·C++ ·Tailwind CSS ·Bootstrap
+🔧 Skills & Technologies
+
+Programming Languages: JavaScript, TypeScript, C++
+
+Frontend Development: React, Next.js, Astro, Tailwind CSS, Bootstrap
+
+Backend & Databases: Node.js, Firebase,Next.js
+
+Tools & Frameworks: Git, GitHub, API Integration, Cloud Services,Postman
+
+🚀 Projects & Interests
+
+Building scalable web applications with modern frameworks.
+
+Exploring IoT, AI, and Embedded Systems for real-world applications.
+
+Developing open-source projects and collaborating with the tech community.
